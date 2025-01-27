@@ -1,0 +1,69 @@
+<form [formGroup]="createNewOrder">
+  <div class="grid">
+    <div class="col-12 font-bold text-lg">Order</div>
+    <div class="col-6">
+      <p-dropdown [options]="employees" appendTo="body" formControlName="empid" optionLabel="fullname"
+        optionValue="empid" placeholder="Employee*" class="w-full p-fluid" />
+    </div>
+    <div class="col-6">
+      <p-dropdown [options]="shippers" appendTo="body" formControlName="shipperid" optionLabel="companyname"
+        optionValue="shipperid" placeholder="Shipper*" class="w-full p-fluid" />
+    </div>
+    <div class="col-12">
+      <input type="text" pInputText formControlName="shipname" class="w-full p-fluid" placeholder="Ship Name*"
+        [maxlength]="40" />
+    </div>
+    <div class="col-4">
+      <input type="text" pInputText formControlName="shipaddress" class="w-full p-fluid" placeholder="Ship Address*"
+        [maxlength]="60" />
+    </div>
+    <div class="col-4">
+      <input type="text" pInputText formControlName="shipcity" class="w-full p-fluid" placeholder="Ship City*"
+        [maxlength]="15" />
+    </div>
+    <div class="col-4">
+      <input type="text" pInputText formControlName="shipcountry" class="w-full p-fluid" placeholder="Ship Country*"
+        [maxlength]="15 " />
+    </div>
+    <div class="col-4">
+      <p-calendar placeholder="Order Date*" appendTo="body" formControlName="orderdate" class="w-full p-fluid"
+        [iconDisplay]="'input'" [showIcon]="true" inputId="icondisplay" />
+    </div>
+    <div class="col-4">
+      <p-calendar placeholder="Required Date*" appendTo="body" formControlName="requireddate" class="w-full p-fluid"
+        [iconDisplay]="'input'" [showIcon]="true" inputId="icondisplay" />
+    </div>
+    <div class="col-4">
+      <p-calendar placeholder="Shipped Date*" appendTo="body" formControlName="shippeddate" class="w-full p-fluid"
+        [iconDisplay]="'input'" [showIcon]="true" inputId="icondisplay" />
+    </div>
+    <div class="col-12">
+      <p-inputNumber placeholder="Freight*" appendTo="body" formControlName="freight" class="w-full p-fluid"
+        inputId="currency-us" mode="currency" currency="USD" locale="en-US" />
+    </div>
+    <div class="col-12">
+      <p-divider></p-divider>
+    </div>
+    <div class="col-12 font-bold text-lg">Order Details</div>
+    <div class="col-12">
+      <p-dropdown [options]="products" appendTo="body" formControlName="productid" optionLabel="productname"
+        optionValue="productid" placeholder="Product*" class="w-full p-fluid" />
+    </div>
+    <div class="col-4">
+      <p-inputNumber placeholder="Unit Price*" formControlName="unitprice" class="w-full p-fluid" inputId="currency-us"
+        mode="currency" currency="USD" locale="en-US" />
+    </div>
+    <div class="col-4">
+      <p-inputNumber placeholder="Quantity*" formControlName="quantity" class="w-full p-fluid" />
+    </div>
+    <div class="col-4">
+      <p-inputNumber placeholder="Discount*" mode="decimal" [maxFractionDigits]="3" formControlName="discount"
+        class="w-full p-fluid" prefix="%" />
+    </div>
+  </div>
+</form>
+<div class="flex justify-content-end gap-2">
+  <p-button label="CLOSE" severity="danger" [text]="true" (onClick)="closeModal()"></p-button>
+  <p-button label="SAVE" severity="success" [text]="true" [disabled]="createNewOrder.invalid"
+    (onClick)="saveOrder()"></p-button>
+</div>
