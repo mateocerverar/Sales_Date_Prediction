@@ -1,27 +1,7 @@
 # SalesDatePrediction
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Informacion relevante: 
+- El proyecto esta hecho en Angular 17 junto con la libreria de componentes UI PrimeNG y es totalmente standalone
+- Tiene manejo de arquitectura de proyectos recomendada por Angular y el core de la aplicación adicionalmente esta manejado por controladores para mejor organización
+- De acuerdo a lo dispuesto en la prueba, se crearon 3 vistas, la tabla principal y dos modales las cuales son manejadas como modales dinamicas, las cuales se comunican mediante eventos con la vista principal
+El proyecto cuenta con un archivo environment en el cual se maneja la url de la API en caso de que se quiera cambiar el puerto, tambien hace uso de interfaces, servicios, enums, constantes, inyeccion de dependencias, tipado de respuestas y formularios y manejo de visibilidad de las propiedades y metodos de cada clase, siguiendo recomendaciones para escribir codigo limpio. 
